@@ -1,0 +1,59 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+}
+
+header,
+footer {
+    background-color: #d86f0cf5;
+}
+
+h1,
+h2,
+h3 {
+    font-size: 1.3rem;
+}
+
+footer {
+    text-align: center;
+}
+
+
+/*===============================================================*/
+
+
+/* les image */
+
+#mainContant img {
+    height: 30rem;
+}
+
+
+/*===============================================================*/
+
+
+/* sur les listes */
+
+nav li {
+    /*enlève les puces de listes*/
+    list-style: none;
+}
+
+
+/* sur les lien*/
+
+nav a {
+    /*couleur noir permant */
+    color: black;
+    text-decoration: none;
+}
+
+nav a:hover {
+    /*Couleur blanc pandant le sur vole  */
+    color: white;
+}
+
+nav a:active {
+    /*pendant le clic enfoncé */
+    color: yellow;
+}
