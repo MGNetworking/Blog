@@ -1,59 +1,142 @@
+* {
+    /* permet de fair hérité tout les élément par défaut de box-sizing */
+    box-sizing: inherit;
+}
+
+:root {
+    --black: #333333;
+    --transwhite: hsla(0, 0%, 100%, 0.500);
+    --red: rgb(245, 41, 41);
+    /* cette propriete sera hériter par tout les élément de la page*/
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Times New Roman', Times, serif;
     font-size: 1rem;
 }
 
-header,
-footer {
-    background-color: #d86f0cf5;
+#logo {
+    width: 80px;
+    padding: 5px;
+    z-index: 200;
+    position: relative;
 }
 
-h1,
-h2,
-h3 {
-    font-size: 1.3rem;
+#mainHearder {
+    background-color: #ec0e0e;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
-footer {
+#mainNav {
+    background-color: var(--red);
+    position: absolute;
+    width: 100%;
+    top: 40px;
+}
+
+#mainFooter {
+    background-color: #ec0e0e;
     text-align: center;
+    height: 40px;
+    font-size: 0.5em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* nav li,
+h1 {
+    display: none;
+} */
+
+#menuButton {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
 }
 
 
 /*===============================================================*/
 
 
-/* les image */
+/*cette permet d'avoir les images responsive*/
 
-#mainContant img {
-    height: 30rem;
+img {
+    /*largeur de 100% pour tout les images*/
+    max-width: 100%;
+    /*hauteur calcul automatiquement*/
+    height: auto;
 }
 
 
 /*===============================================================*/
 
 
-/* sur les listes */
+/* gestion de l'image de fond | l'id mainbody a permis de séparé 
+la couche d'affichage du font avec le contenu de mainContant */
 
-nav li {
-    /*enlève les puces de listes*/
-    list-style: none;
+#mainbody {
+    /*Ajoute l'image de font*/
+    background-image: url(/image/background/arch_nebula-wallpaper-3554x1999.jpg);
+    /*pas de repétition ici superflu */
+    background-repeat: no-repeat;
+    /* positionne le centre de l'image (trs grand image)*/
+    background-position: center;
+    /* fixed =>  l'image est fait glissé le contenu*/
+    background-attachment: fixed;
+    /*cover => couvre tout la page + redimentionnement avec la page*/
+    background-size: cover;
+    /* permte d'éloigne les bordes est enléve la superosition des élements
+    inclus comme les titres */
+    padding: 100px 20px;
+    /*hauteur min de 100% du viewport (la page totale )*/
+    min-height: 100vh;
 }
 
 
-/* sur les lien*/
+/* gestion des élements se trouvant dans le contenu de la page*/
 
-nav a {
-    /*couleur noir permant */
-    color: black;
+#mainContant {
+    /* couche de couleur transparent dans le main*/
+    background-color: var(--transwhite);
+    padding: 20px;
+}
+
+
+/*===============================================================*/
+
+
+/* parti galeri*/
+
+#mainbody.galleries ul {
+    /*d'active les style par défaut du navigateur*/
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#mainbody.galleries ul li {
+    background-color: var(--transwhite);
+    padding: 10px;
+}
+
+
+/*les liens */
+
+#mainbody.galleries ul li a {
+    color: var(--black);
+    /*retire le soulignement par défaut*/
     text-decoration: none;
 }
 
-nav a:hover {
-    /*Couleur blanc pandant le sur vole  */
-    color: white;
-}
 
-nav a:active {
-    /*pendant le clic enfoncé */
-    color: yellow;
+/*ajout d'un effet*/
+
+#mainbody.galleries ul li:hover {
+    background-color: var(--red);
 }
