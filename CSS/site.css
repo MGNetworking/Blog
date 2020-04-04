@@ -1,33 +1,61 @@
-* {
-    /* permet de fair hérité tout les élément par défaut de box-sizing */
-    box-sizing: inherit;
-}
+/*===============================================================*/
+
+
+/*parti générale */
+
+
+/*definit au niveau de la racine du document HTML*/
 
 :root {
     --black: #333333;
     --transwhite: hsla(0, 0%, 100%, 0.500);
     --red: rgb(245, 41, 41);
+    --redSurVol: rgba(245, 41, 41, 0.425);
     /* cette propriete sera hériter par tout les élément de la page*/
+    /*Modifie le comportement pour inclure la largeur et la hauteur dans le contenu*/
     box-sizing: border-box;
 }
 
+
+/* Ici donne a tout les éléments les champs ci-dessous*/
+
+* {
+    /* permet de fair hérité tout les élément par défaut de box-sizing */
+    /*Valeurs globales*/
+    box-sizing: inherit;
+}
+
+
+/*J'applique a tout le contenu dans le body les champs ci-dessous*/
+
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /*100% a tout les éléments */
     font-size: 1rem;
 }
+
+
+/*Le logo : Pour le fair passé devant les autre éléments je désactive le mode de positionne par defaut qui est le positionnement static */
 
 #logo {
     width: 80px;
     padding: 5px;
-    z-index: 200;
+    /*intervient sur l'ordre d'emplilement: axe de la profondeur ici passe par dessus*/
+    z-index: 1;
+    /*activé le z-index avec la postion relavive */
+    /*garde la posistion relative est non absolut pour cause d'autre éléments sont juxtaposé*/
     position: relative;
 }
+
+
+/**/
 
 #mainHearder {
     background-color: #ec0e0e;
     height: 40px;
     position: fixed;
     top: 0;
+    /*fait prende la place en fonction de la taille du device*/
     width: 100%;
 }
 
@@ -38,21 +66,32 @@ body {
     top: 40px;
 }
 
+#mainContant h2 {
+    color: var(--red);
+    font-size: 1.8em;
+    letter-spacing: 0.1em;
+    margin-top: 30px;
+    text-align: center;
+}
+
 #mainFooter {
     background-color: #ec0e0e;
     text-align: center;
     height: 40px;
     font-size: 0.5em;
+    /*fix le footer en base */
     position: fixed;
     bottom: 0;
     width: 100%;
 }
 
-
-/* nav li,
+nav li,
 h1 {
     display: none;
-} */
+}
+
+
+/*image bp menu*/
 
 #menuButton {
     width: 35px;
@@ -114,7 +153,7 @@ la couche d'affichage du font avec le contenu de mainContant */
 /* parti galeri*/
 
 #mainbody.galleries ul {
-    /*d'active les style par défaut du navigateur*/
+    /*supprime l'apparence de la liste puce */
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -130,7 +169,7 @@ la couche d'affichage du font avec le contenu de mainContant */
 
 #mainbody.galleries ul li a {
     color: var(--black);
-    /*retire le soulignement par défaut*/
+    /*retire le soulignement par défaut des listes*/
     text-decoration: none;
 }
 
@@ -138,5 +177,54 @@ la couche d'affichage du font avec le contenu de mainContant */
 /*ajout d'un effet*/
 
 #mainbody.galleries ul li:hover {
-    background-color: var(--red);
+    background-color: var(--redSurVol);
 }
+
+
+/*===============================================================*/
+
+#formulaireDroite {
+    padding: 0em;
+    border: 0em;
+    margin: 0em;
+}
+
+
+/*parti formualire de contact*/
+
+#formContact {
+    border-top: solid 1px var(--red);
+    margin: 20px 0px;
+}
+
+
+/* label formulaire*/
+
+.formulaire {
+    font-size: 1.2em;
+    text-align: center;
+    border: solid red 1px;
+}
+
+#formulaireGauche,
+#formulaireDroite,
+#formulaireCentre {
+    display: inline-block;
+    padding: 10px;
+}
+
+
+/*contenu du formulaire*/
+
+#message {
+    width: 235px;
+    height: 118px;
+    /*redimentionnement du textarea dans le formualire*/
+    resize: none;
+}
+
+
+/*===============================================================*/
+
+
+/*parti navigation*/

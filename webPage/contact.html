@@ -34,35 +34,58 @@
 
     <div id="mainbody">
 
-        <main id="mainContant">
-            <h1>Contactez-nous</h1>
-            <p>Merci de compléter le formulaire suivant pour me contacter. Tout les champs de ce formulaire sont requis.</p>
+        <main id="mainContant" class="formulaire">
+
+            <header>
+                <h2>Contactez-nous</h2>
+                <p>Merci de compléter le formulaire suivant pour me contacter. Tout les champs de ce formulaire sont requis.</p>
+            </header>
 
             <form id="formContact" action="retourFormulaire.html">
 
                 <div id="formulaireGauche">
                     <div>
                         <label for="prenom">Prénom</label>
+                        </br>
                         <input type="text" name="prenom" id="prenom" required autofocus tabindex="1" placeholder="Votre nom" />
                     </div>
                     <div>
                         <label for="nomFamille">Nom de Famille</label>
+                        </br>
                         <input type="text" name="nomFamille" id="nomFamille" required tabindex="2" placeholder="votre prénom" />
                     </div>
                     <div>
                         <label for="email">Adresse e-mail</label>
+                        </br>
                         <input type="email" name="email" id="email" required tabindex="3" placeholder="votre.email@gmail.com" />
                     </div>
                 </div>
 
-                <div id="formulaireDroite">
-                    <label for="message">Votre Message</label>
-                    <textarea name="message" id="message" required tabindex="4" title="Mettre votre message a notre attention"></textarea>
+
+                <div>
+                    <div id="formulaireDroite">
+
+                        <label for="message">Votre Message</label></br>
+                        <textarea name="message" id="message" required tabindex="4" title="Mettre votre message a notre attention">
+
+                    </textarea>
+
+                    </div>
                 </div>
 
                 <div>
+                    <div id="formulaireCentre">
+                        <input type="radio" id="homme" name="gender" value="Homme" />
+                        <label for="homme">Homme</label>
+                        </br>
+                        <input type="radio" id="femme" name="gender" value="Femme" />
+                        <label for="femme">Femme</label>
+                    </div>
+                </div>
+                <div>
                     <button type="submit">Envoyer</button>
                 </div>
+
             </form>
             <!-- fin formContact -->
 
