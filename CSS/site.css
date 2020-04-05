@@ -1,230 +1,355 @@
-/*===============================================================*/
-
-
-/*parti générale */
-
-
-/*definit au niveau de la racine du document HTML*/
-
-:root {
-    --black: #333333;
-    --transwhite: hsla(0, 0%, 100%, 0.500);
-    --red: rgb(245, 41, 41);
-    --redSurVol: rgba(245, 41, 41, 0.425);
-    /* cette propriete sera hériter par tout les élément de la page*/
-    /*Modifie le comportement pour inclure la largeur et la hauteur dans le contenu*/
-    box-sizing: border-box;
-}
-
-
-/* Ici donne a tout les éléments les champs ci-dessous*/
-
-* {
-    /* permet de fair hérité tout les élément par défaut de box-sizing */
-    /*Valeurs globales*/
-    box-sizing: inherit;
-}
-
-
-/*J'applique a tout le contenu dans le body les champs ci-dessous*/
-
-body {
-    font-family: 'Times New Roman', Times, serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    /*100% a tout les éléments */
-    font-size: 1rem;
-}
-
-
-/*Le logo : Pour le fair passé devant les autre éléments je désactive le mode de positionne par defaut qui est le positionnement static */
-
-#logo {
-    width: 80px;
-    padding: 5px;
-    /*intervient sur l'ordre d'emplilement: axe de la profondeur ici passe par dessus*/
-    z-index: 1;
-    /*activé le z-index avec la postion relavive */
-    /*garde la posistion relative est non absolut pour cause d'autre éléments sont juxtaposé*/
-    position: relative;
-}
-
-
-/**/
-
-#mainHearder {
-    background-color: #ec0e0e;
-    height: 40px;
-    position: fixed;
-    top: 0;
-    /*fait prende la place en fonction de la taille du device*/
-    width: 100%;
-}
-
-#mainNav {
-    background-color: var(--red);
-    position: absolute;
-    width: 100%;
-    top: 40px;
-}
-
-#mainContant h2 {
-    color: var(--red);
-    font-size: 1.8em;
-    letter-spacing: 0.1em;
-    margin-top: 30px;
-    text-align: center;
-}
-
-#mainFooter {
-    background-color: #ec0e0e;
-    text-align: center;
-    height: 40px;
-    font-size: 0.5em;
-    /*fix le footer en base */
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-nav li,
-h1 {
-    display: none;
-}
-
-
-/*image bp menu*/
-
-#menuButton {
-    width: 35px;
-    height: 35px;
-    border-radius: 8px;
-}
-
-
-/*===============================================================*/
-
-
-/*cette permet d'avoir les images responsive*/
-
-img {
-    /*largeur de 100% pour tout les images*/
-    max-width: 100%;
-    /*hauteur calcul automatiquement*/
-    height: auto;
-}
-
-
-/*===============================================================*/
-
-
-/* gestion de l'image de fond | l'id mainbody a permis de séparé 
+    /*===============================================================*/
+    /*parti générale */
+    /*definit au niveau de la racine du document HTML*/
+    
+     :root {
+        --black: #333333;
+        --transwhite: hsla(0, 0%, 100%, 0.500);
+        --red: rgb(245, 41, 41);
+        --redSurVol: rgba(245, 41, 41, 0.425);
+        /* cette propriete sera hériter par tout les élément de la page*/
+        /*Modifie le comportement pour inclure la largeur et la hauteur dans le contenu*/
+        box-sizing: border-box;
+    }
+    /* Ici donne a tout les éléments les champs ci-dessous*/
+    
+    * {
+        /* permet de fair hérité tout les élément par défaut de box-sizing */
+        /*Valeurs globales*/
+        box-sizing: inherit;
+    }
+    /*J'applique a tout le contenu dans le body les champs ci-dessous*/
+    
+    body {
+        font-family: 'Times New Roman', Times, serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        /*100% a tout les éléments */
+        font-size: 1rem;
+    }
+    /*Le logo : Pour le fair passé devant les autre éléments je désactive le mode de positionne par defaut qui est le positionnement static */
+    
+    #logo {
+        width: 80px;
+        padding: 5px;
+        /*intervient sur l'ordre d'emplilement: axe de la profondeur ici passe par dessus*/
+        z-index: 1;
+        /*activé le z-index avec la postion relavive */
+        /*garde la posistion relative est non absolut pour cause d'autre éléments sont juxtaposé*/
+        position: relative;
+    }
+    /* gestion du header du body  */
+    
+    #mainHearder {
+        background-color: #ec0e0e;
+        /*hauteur du bandeau*/
+        height: 40px;
+        /*position fixe tout en haut*/
+        position: fixed;
+        top: 0;
+        /*fait prende la place en fonction de la taille du device*/
+        width: 100%;
+        /*creation d'un Gird View*/
+        display: grid;
+        /*creation de 3 colonne comportement par défaut
+        il sera modifier par les @media queries */
+        grid-template-columns: 80px 1fr 35px;
+        /*1fr = 1 fraction , ici est prévut le reste de
+        l'espace pour la fraction vu que le reste ne changera pas de taille*/
+    }
+    
+    #mainHearder h1 {
+        font-size: 1.5em;
+        color: white;
+        z-index: 1;
+    }
+    
+    #mainNav {
+        background-color: var(--red);
+        position: absolute;
+        width: 100%;
+        top: 40px;
+    }
+    
+    #mainContant h2 {
+        color: var(--red);
+        /*taille du titre*/
+        font-size: 1.8em;
+        /*espace entre les lettre*/
+        letter-spacing: 0.1em;
+        margin-top: 30px;
+        text-align: center;
+    }
+    
+    #mainFooter {
+        background-color: #ec0e0e;
+        text-align: center;
+        height: 40px;
+        font-size: 0.5em;
+        /*fix le footer en base */
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    nav li {
+        display: none;
+    }
+    /*image bp menu en haut */
+    
+    #menuButton {
+        width: 35px;
+        height: 35px;
+        border-radius: 8px;
+        background-color: transparent;
+        border: none;
+    }
+    /*===============================================================*/
+    /*cette permet d'avoir les images responsive*/
+    
+    img {
+        /*largeur de 100% pour tout les images*/
+        max-width: 100%;
+        /*hauteur calcul automatiquement*/
+        height: auto;
+    }
+    /*===============================================================*/
+    /* gestion de l'image de fond | l'id mainbody a permis de séparé 
 la couche d'affichage du font avec le contenu de mainContant */
-
-#mainbody {
-    /*Ajoute l'image de font*/
-    background-image: url(/image/background/arch_nebula-wallpaper-3554x1999.jpg);
-    /*pas de repétition ici superflu */
-    background-repeat: no-repeat;
-    /* positionne le centre de l'image (trs grand image)*/
-    background-position: center;
-    /* fixed =>  l'image est fait glissé le contenu*/
-    background-attachment: fixed;
-    /*cover => couvre tout la page + redimentionnement avec la page*/
-    background-size: cover;
-    /* permte d'éloigne les bordes est enléve la superosition des élements
+    
+    #mainbody {
+        /*Ajoute l'image de font*/
+        background-image: url(/image/background/arch_nebula-wallpaper-3554x1999.jpg);
+        /*pas de repétition ici superflu */
+        background-repeat: no-repeat;
+        /* positionne le centre de l'image (trs grand image)*/
+        background-position: center;
+        /* fixed =>  l'image est fait glissé le contenu*/
+        background-attachment: fixed;
+        /*cover => couvre tout la page + redimentionnement avec la page*/
+        background-size: cover;
+        /* permte d'éloigne les bordes est enléve la superosition des élements
     inclus comme les titres */
-    padding: 100px 20px;
-    /*hauteur min de 100% du viewport (la page totale )*/
-    min-height: 100vh;
-}
-
-
-/* gestion des élements se trouvant dans le contenu de la page*/
-
-#mainContant {
-    /* couche de couleur transparent dans le main*/
-    background-color: var(--transwhite);
-    padding: 20px;
-}
-
-
-/*===============================================================*/
-
-
-/* parti galeri*/
-
-#mainbody.galleries ul {
-    /*supprime l'apparence de la liste puce */
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-#mainbody.galleries ul li {
-    background-color: var(--transwhite);
-    padding: 10px;
-}
-
-
-/*les liens */
-
-#mainbody.galleries ul li a {
-    color: var(--black);
-    /*retire le soulignement par défaut des listes*/
-    text-decoration: none;
-}
-
-
-/*ajout d'un effet*/
-
-#mainbody.galleries ul li:hover {
-    background-color: var(--redSurVol);
-}
-
-
-/*===============================================================*/
-
-#formulaireDroite {
-    padding: 0em;
-    border: 0em;
-    margin: 0em;
-}
-
-
-/*parti formualire de contact*/
-
-#formContact {
-    border-top: solid 1px var(--red);
-    margin: 20px 0px;
-}
-
-
-/* label formulaire*/
-
-.formulaire {
-    font-size: 1.2em;
-    text-align: center;
-    border: solid red 1px;
-}
-
-#formulaireGauche,
-#formulaireDroite,
-#formulaireCentre {
-    display: inline-block;
-    padding: 10px;
-}
-
-
-/*contenu du formulaire*/
-
-#message {
-    width: 235px;
-    height: 118px;
-    /*redimentionnement du textarea dans le formualire*/
-    resize: none;
-}
-
-
-/*===============================================================*/
-
-
-/*parti navigation*/
+        padding: 100px 20px;
+        /*hauteur min de 100% du viewport (la page totale )*/
+        min-height: 100vh;
+    }
+    /* gestion des élements se trouvant dans le contenu de la page*/
+    
+    #mainContant {
+        /* couche de couleur transparent dans le main*/
+        background-color: var(--transwhite);
+        padding: 20px;
+    }
+    /*===============================================================*/
+    /*parti blog*/
+    
+    #mainContant article header h3 {
+        color: red;
+    }
+    /*bouton de retour en bas a droit de l'écran*/
+    
+    .bpRetour {
+        /*fixe la position*/
+        position: fixed;
+        /*localisation du bp*/
+        bottom: 3em;
+        right: 0.3em;
+        /*sa taille */
+        width: 2em;
+        height: 2em;
+        /*son design avec border-radius pour arrondir les angles*/
+        border-radius: 20%;
+        border: solid white 0.1em;
+        background-color: var(--redSurVol);
+    }
+    /*permet de mettre le énième enfant avec odd qui veux paire
+ est even veux pair*/
+    
+    #mainContant article:nth-child(odd) {
+        background-color: var(--transwhite);
+    }
+    
+    #mainContant article:nth-child(even) {
+        background-color: var(--redSurVol);
+    }
+    
+    #mainContant article header p {
+        /*la taille de l'ecriture */
+        font-size: 0.8em;
+        /*l'ecriture en italique*/
+        font-style: italic;
+        /*soulignement en dessous avec border*/
+        border-bottom: solid red 1px;
+    }
+    /*===============================================================*/
+    /* parti galeri*/
+    
+    #mainbody.galleries ul {
+        /*supprime l'apparence de la liste puce */
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        /*utilisation de l'affichage grid pour 
+        utilisé grid-gap qui permet un espace de 20px */
+        display: grid;
+        grid-gap: 20px;
+    }
+    
+    #mainbody.galleries ul li {
+        background-color: var(--transwhite);
+        padding: 10px;
+    }
+    /*les liens */
+    
+    #mainbody.galleries ul li a {
+        color: var(--black);
+        /*retire le soulignement par défaut des listes*/
+        text-decoration: none;
+    }
+    /*ajout d'un effet*/
+    
+    #mainbody.galleries ul li:hover {
+        background-color: var(--redSurVol);
+    }
+    /*===============================================================*/
+    /*parti formualire de contact*/
+    
+    #formContact {
+        border-top: solid 1px var(--red);
+        margin: 20px 0px;
+    }
+    /* label formulaire*/
+    
+    .formulaire {
+        font-size: 1.2em;
+        text-align: center;
+        border: solid red 1px;
+    }
+    
+    #formulaireGauche,
+    #formulaireDroite,
+    #formulaireCentre {
+        display: inline-block;
+        padding: 10px;
+    }
+    /*contenu du formulaire*/
+    
+    #message {
+        width: 235px;
+        height: 118px;
+        /*redimentionnement du textarea dans le formualire*/
+        resize: none;
+    }
+    /*===============================================================*/
+    /*parti navigation*/
+    /*l'ensemble du menu*/
+    
+    #colonneDroitAside {
+        background-color: red;
+        padding: 20px;
+    }
+    /*pour tout les section*/
+    
+    #colonneDroitAside section {
+        border-bottom: 1px solid white;
+        padding: 20px;
+    }
+    /*la barre de recherche*/
+    
+    #colonneDroitAside section input {
+        width: 100%;
+        border-radius: 2em;
+    }
+    /*les titres h2*/
+    
+    #colonneDroitAside section h2 {
+        color: white;
+        font-size: 1.3em;
+        letter-spacing: 0.1em;
+    }
+    /*liste a puce */
+    
+    #categories ul,
+    #blogAchives ul {
+        list-style: none;
+        background-color: white;
+        width: 100%;
+        border-radius: 0.5em;
+        /*permet de collé sur la gauche*/
+        padding: 0;
+        margin: 0;
+    }
+    /*les lien dans le titre h3*/
+    
+    #blogAchives div h3 a {
+        text-decoration: none;
+        color: black;
+        background-color: white;
+        border-radius: 0.5em;
+        width: 100%;
+        letter-spacing: 0.1em;
+    }
+    /*les listes avec alternance de couleur*/
+    
+    #categories li:nth-last-child(odd),
+    #blogAchives li:nth-last-child(odd) {
+        background-color: var(--redSurVol);
+    }
+    /*les liens dans la liste*/
+    /*slection tout a dont le parent li*/
+    
+    li>a {
+        text-decoration: none;
+        padding: 2px;
+        width: 100%;
+        color: black;
+    }
+    /*les span*/
+    /*sélection tout span dont le parnet a*/
+    
+    a>span {
+        background-color: red;
+        /*pour fair les arrondis*/
+        border-radius: 0.6em;
+        color: white;
+    }
+    /*===============================================================*/
+    /*media Query*/
+    /*si l'ecran a au minimun 768 px de large
+    les styles css suivant seront appliquer*/
+    /*768 est la taille prevut pour les tablettes*/
+    
+    @media only screen and (min-width:768px) {
+        #menuButton {
+            display: none;
+        }
+        #mainHearder {
+            /*modifie l'espace prevut pour le titre*/
+            grid-template-columns: 80px 250px 1fr;
+        }
+        #mainbody.galleries ul {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    /*Pour 1024 px de large*/
+    
+    @media only screen and (min-width:1024px) {
+        .bpRetour {
+            display: none;
+        }
+        #mainHearder {
+            /*modifie l'espace prevut pour le titre*/
+            grid-template-columns: 80px repeat(2, 1fr);
+        }
+        #mainHearder>h1 {
+            font-size: 1.8em;
+        }
+        #mainbody.galleries ul {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    
+    @media only screen and (min-width:1200px) {
+        #mainbody.galleries ul {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
