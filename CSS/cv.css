@@ -1,53 +1,136 @@
 * {
+    /*inclure dans les boites margin padding bordure*/
     box-sizing: border-box;
 }
 
-:root {
-    --blancCasser: hsla(0, 0%, 100%, 0.5);
+ :root {
+    --blancCasser: hsla(0, 0%, 100%, 0.685);
+    --noirPale: rgba(0, 0, 0, 0.678);
 }
 
 body {
     font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-gap: 20px;
-    font-size: 1.5rem;
+    grid-gap: 10px;
 }
 
 img {
-    padding: 20px;
-    height: 300px;
+    box-sizing: border-box;
+    height: 10em;
+    border-radius: 20em;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
 }
 
-#partiGauche {
-    padding-left: 30px;
-    background-color: rgba(0, 0, 0, 0.753);
-    color: hsla(0, 0%, 100%, 0.685);
-}
 
-#partiGauche h1 {
-    text-align: center;
-}
+/*===============================================================*/
 
-#partiGauche h2 {
-    text-transform: capitalize;
-    text-align: center;
-}
+
+/*parti information profile*/
 
 #partiGauche div {
     display: grid;
-    justify-content: center;
 }
+
+#partiGauche {
+    padding: 0 30px;
+    background-image: linear-gradient( -130deg, black, rgba(0, 0, 0, 0.568));
+    color: var(--blancCasser);
+}
+
+
+/*===============================================================*/
+
+
+/*parti contenu du CV*/
 
 #partiDroite {
     display: grid;
     justify-content: center;
+    color: var(--noirPale);
     background-image: url(/image/background/arch_nebula-wallpaper-3554x1999.jpg);
-    background-position: left;
-    color: var(--blancCasser);
+    /* fixed =>  l'image est fait glissé le contenu*/
+    background-attachment: fixed;
+    /*cover => couvre tout la page + redimentionnement avec la page*/
+    background-size: cover;
+    /*hauteur min de 100% du viewport (la page totale )*/
+    min-height: 100vh;
 }
 
-#partiDroite h2,
+.mainContenu {
+    background-color: rgba(255, 255, 255, 0.253);
+    width: 1fr;
+    padding: 20px;
+}
+
+
+/*===============================================================*/
+
+
+/*parti formatage du texte */
+
+#partiDroite h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#partiDroite h3 {
+    /*Met en ligne pour le soulignement*/
+    display: inline;
+    border-bottom: solid var(--noirPale) 1px;
+    text-transform: capitalize;
+}
+
 #partiGauche h2 {
-    border-bottom: solid var(--blancCasser) 1px;
+    text-transform: capitalize;
+}
+
+
+/*===============================================================*/
+
+
+/*parti responsive*/
+
+@media screen and (min-width:640px) {
+    body {
+        font-size: 1em;
+    }
+}
+
+
+/*taille d'une tablette*/
+
+@media screen and (min-width:768px) {
+    body {
+        font-size: 1em;
+        /**/
+        grid-template-columns: 350px 1fr;
+    }
+}
+
+
+/*ecran petit ecran PC*/
+
+@media screen and (min-width:1024px) {
+    body {
+        font-size: 1em;
+        /**/
+        grid-template-columns: 400px 2fr;
+    }
+}
+
+
+/*ecran normale*/
+
+@media screen and (min-width:1200px) {
+    body {
+        font-size: 1em;
+        /**/
+        grid-template-columns: 400px 2fr;
+    }
+    .mainContenu {
+        width: 50em;
+    }
 }
