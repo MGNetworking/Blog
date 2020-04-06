@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --blancCasser: hsla(0, 0%, 100%, 0.5);
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 20px;
+    font-size: 1.5rem;
+}
+
+img {
+    padding: 20px;
+    height: 300px;
+}
+
+#partiGauche {
+    padding-left: 30px;
+    background-color: rgba(0, 0, 0, 0.753);
+    color: hsla(0, 0%, 100%, 0.685);
+}
+
+#partiGauche h1 {
+    text-align: center;
+}
+
+#partiGauche h2 {
+    text-transform: capitalize;
+    text-align: center;
+}
+
+#partiGauche div {
+    display: grid;
+    justify-content: center;
+}
+
+#partiDroite {
+    display: grid;
+    justify-content: center;
+    background-image: url(/image/background/arch_nebula-wallpaper-3554x1999.jpg);
+    background-position: left;
+    color: var(--blancCasser);
+}
+
+#partiDroite h2,
+#partiGauche h2 {
+    border-bottom: solid var(--blancCasser) 1px;
+}
