@@ -14,15 +14,3 @@ liElement.appendChild(elementA);
 
 // recherche de l'élement ul et y ajouter l'élément li 
 document.querySelector('#mainNav ul').appendChild(liElement);
-
-
-
-// recherche de l'élément id mainbody
-let mainbody = document.getElementById("mainbody");
-
-// modification du background en passantr par l'objet style du DOM
-mainbody.style.backgroundImage =
-    'url(/image/background/green_forest_trees_summer_mist-wallpaper-2560x1440.jpg)';
-
-// cette methode n'est pas recommandé
-mainbody.setAttribute('style', 'background-image : url(/image/background/green_forest_trees_summer_mist-wallpaper-2560x1440.jpg) ');

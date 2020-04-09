@@ -75,6 +75,7 @@
             display: flex;
             /*mettre l'elément au centre */
             align-items: center;
+            /* la hauteur du texte*/
             height: 40px;
             margin: 0;
         }
@@ -184,7 +185,7 @@ la couche d'affichage du font avec le contenu de mainContant */
         
         #mainbody {
             /*Ajoute l'image de font*/
-            background-image: url(/image/background/arch_nebula-wallpaper-3554x1999.jpg);
+            background-image: url(/image/background/background_image_1.jpg);
             /*pas de repétition ici superflu */
             background-repeat: no-repeat;
             /* positionne le centre de l'image (trs grand image)*/
@@ -194,7 +195,7 @@ la couche d'affichage du font avec le contenu de mainContant */
             /*cover => couvre tout la page + redimentionnement avec la page*/
             background-size: cover;
             /* permte d'éloigne les bordes est enléve la superosition des élements
-    inclus comme les titres */
+                inclus comme les titres */
             padding: 100px 20px;
             /*hauteur min de 100% du viewport (la page totale )*/
             min-height: 100vh;
@@ -282,6 +283,32 @@ la couche d'affichage du font avec le contenu de mainContant */
         
         #mainbody.galleries ul li:hover {
             background-color: var(--redSurVol);
+        }
+        /*gestion de l'agandissment de l'image click*/
+        /*caché l'image ; noté que l'image caché est vide par défaut*/
+        
+        figure {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: hsla(0, 0%, 0%, 0.850);
+            /*masquer la visibilité */
+            visibility: hidden;
+            /*element non visible par défaul*/
+            opacity: 0;
+        }
+        /*Permet de rendre visible l'image*/
+        
+        figure.visible {
+            visibility: visible;
+            opacity: 1;
         }
         /*===============================================================*/
         /*parti formualire de contact*/
@@ -461,7 +488,7 @@ la couche d'affichage du font avec le contenu de mainContant */
             }
             /*permet de conserver la taille des élément a */
             #mainNav a {
-                padding: 0 5px;
+                padding: 0px 5px;
             }
         }
         /*Pour 1024 px de large*/
@@ -475,6 +502,10 @@ la couche d'affichage du font avec le contenu de mainContant */
             }
             #mainHearder>h1 {
                 font-size: 1.8em;
+            }
+            /*modifie l'espace prevut pour le titre*/
+            #mainHearder {
+                grid-template-columns: 80px 1fr 2fr;
             }
             #mainbody.galleries ul {
                 grid-template-columns: repeat(3, 1fr);
