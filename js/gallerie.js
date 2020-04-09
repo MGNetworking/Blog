@@ -13,15 +13,30 @@ function imageAction(event) {
     // recupération de la cible (image click)
     let image = event.target;
 
-    // recherche dans la DOM l'élément ou l'on ajout la future
-    // image agrandi
-    let tagfigure = document.getElementById('agrandissement');
-    let tagImg = tagfigure.querySelector('img');
+    // recup de l'id agrandissement
+    let idAgrandissement = document.getElementById('agrandissement');
+    // recup la balise img
+    let tagImg = idAgrandissement.querySelector('img');
 
-    // ajoute de la source clické a celle a agrandire
+    // ajoute a la source clické la nouvelle soucre
     tagImg.src = image.src;
 
-    tagfigure.classList.toggle(`visible`);
+    // ajout de la classe visible
+    // toggle a pour fonction de mettre en fonction ce qu'il contient
+    // ici il ajoute la classe visible a la balise figure
+    // si la classe existe, il l'ajoute.si non il l'enlève
+    idAgrandissement.classList.toggle('visible');
+    // ajout de l'evenement pour la fermeture
+    idAgrandissement.addEventListener('click', fermetureImage, false);
 
-    console.log(tagImg);
+}
+
+function fermetureImage() {
+
+    // recup de l'id agrandissement
+    let idAgrandissement = document.getElementById('agrandissement');
+
+    // ici il enléve la classe agrandissement situé dans ficgure 
+    // cela a pour effet de faire disparaitre les propriétés d'affichage
+    idAgrandissement.classList.toggle('visible');
 }
