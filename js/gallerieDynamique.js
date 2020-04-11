@@ -1,11 +1,12 @@
-// script d'agrandissement de l'image sélection dans la galerie
-// recherche element dans le DOM de mes images
+/* script d'agrandissement de l'image sélection dans la galerie 
+recherche element dans le DOM de mes images*/
+
 let element = document.querySelectorAll('#mainContant ul li img');
 
 for (let i = 0; i < element.length; i++) {
 
     element[i].addEventListener('click', imageAction, false);
-    //console.log(element[i]);
+
 }
 
 // evenement image

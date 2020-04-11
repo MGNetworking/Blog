@@ -19,8 +19,6 @@ fetch("/Json/check_background.json").then(function(response) {
 
     let pathImage = monFichierJson.image[imagerecherche].path;
 
-
-
     // recherche de l'élément id mainbody pour l'ajout de l'image
     let mainbody = document.querySelector("#mainbody");
 
