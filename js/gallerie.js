@@ -1,10 +1,11 @@
+// script d'agrandissement de l'image sélection dans la galerie
 // recherche element dans le DOM de mes images
 let element = document.querySelectorAll('#mainContant ul li img');
 
 for (let i = 0; i < element.length; i++) {
 
     element[i].addEventListener('click', imageAction, false);
-    console.log(element[i]);
+    //console.log(element[i]);
 }
 
 // evenement image
@@ -14,7 +15,9 @@ function imageAction(event) {
     let image = event.target;
 
     // recup de l'id agrandissement
-    let idAgrandissement = document.getElementById('agrandissement');
+    let idAgrandissement = document.querySelector('#agrandissement');
+
+    //console.log(idAgrandissement);
     // recup la balise img
     let tagImg = idAgrandissement.querySelector('img');
 
@@ -31,6 +34,7 @@ function imageAction(event) {
 
 }
 
+// fonction utiliser pour evenement
 function fermetureImage() {
 
     // recup de l'id agrandissement

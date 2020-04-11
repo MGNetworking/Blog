@@ -301,8 +301,11 @@ la couche d'affichage du font avec le contenu de mainContant */
             background-color: hsla(0, 0%, 0%, 0.850);
             /*masquer la visibilité */
             visibility: hidden;
-            /*element non visible par défaul*/
+            /*rendre opaque l'element*/
             opacity: 0;
+            /*Permet de fair l'affichage ou transistion */
+            /*peut etre utilisé avec margin-right par exemple*/
+            transition: opacity 1s, visibility 1s;
         }
         /*Permet de rendre visible l'image*/
         

@@ -36,8 +36,4 @@ request.onload = function() {
 
     // modification du background en passante par l'objet style du DOM
     mainbody.style.backgroundImage = `url(/image/background/${pathImage})`;
-
-
-
-
 }
