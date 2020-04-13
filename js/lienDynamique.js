@@ -1,7 +1,8 @@
-/* Ce sript fait : 
+/* creation des éléments pour la page galeriImage.html 
+Ce sript fait : 
     ajoute un listener sur la page ecoute le chargement 
     recherche le fichier Json qui contient tout les reférences des images
-    créer les éléments pour l'ajoute de ces image
+    créer les éléments pour l'ajout de ces images
     ajoute un listner pour l'agrandissement est le retour de celui-ci pour chaque image
 */
 var villegalerie;

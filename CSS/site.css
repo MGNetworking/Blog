@@ -161,7 +161,7 @@
             text-decoration: none;
         }
         /*===============================================================*/
-        /*cette permet d'avoir les images responsive*/
+        /*cette parti permet d'avoir les images responsive*/
         
         img {
             /*largeur de 100% pour tout les images*/
@@ -328,9 +328,10 @@ la couche d'affichage du font avec le contenu de mainContant */
         
         #mainContant.formulaire form div>div,
         #mainContant.formulaire form button {
-            margin: 20px;
+            margin: 10px;
             display: flex;
-            flex-direction: column;
+            flex-flow: column nowrap;
+            justify-content: space-between;
         }
         /*geston du textarea*/
         
@@ -355,9 +356,35 @@ la couche d'affichage du font avec le contenu de mainContant */
             color: red;
             font-weight: bold;
         }
+        /* taille du champs de saisi*/
         
-        #mainContant.formulaire form input {
-            width: 100%;
+        #mainContant.formulaire form input,
+        #mainContant.formulaire form textarea {
+            height: 100%;
+        }
+        /*gestion du message d'erreur*/
+        
+        input.invalid,
+        textarea.invalid {
+            border: 2px solid var(--red);
+        }
+        /*le champs message valide  utilise la propriete valid du */
+        
+        main form input:valid,
+        main form textarea:valid {
+            border: 2px solid green;
+        }
+        /*le champs message d'erreur*/
+        
+        #formContact label span {
+            color: var(--red);
+        }
+        /*permet de paramétre les label avec sont contenu
+        de message d'erreur */
+        
+        #formContact label {
+            display: flex;
+            justify-content: space-between;
         }
         /*===============================================================*/
         /*parti navigation de droite*/

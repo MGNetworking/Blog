@@ -1,4 +1,6 @@
-// utilisation de l'API Fetch
+/*Ce script est utiliser pour le changement d'image du background
+    utilisation de l'API Fetch*/
+
 // envoi une requet sur le serveur pour la récupération du fichier Json
 fetch("/Json/check_background.json").then(function(response) {
 

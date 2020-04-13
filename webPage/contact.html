@@ -11,9 +11,16 @@
     <link rel="stylesheet" href="/CSS/normalize.css" type="text/css" />
     <link rel="stylesheet" href="/CSS/site.css" type="text/css" />
 
+    <!-- menu petit ecran -->
     <script src="/js/jquery-3.4.1.min.js"></script>
     <script src="/js/menu.js"></script>
-    <script src="/js/changement_image.js" defer></script>
+
+    <!-- fonction dynamique  -->
+    <script src="/js/backgroundDynamique.js" defer></script>
+
+    <!-- formulaire -->
+    <script src="/js/formulaire.js" defer></script>
+
 
 </head>
 
@@ -48,18 +55,18 @@
                 <h2>Contactez-moi</h2>
                 <p>Merci de compléter le formulaire suivant pour me contacter. Tout les champs de ce formulaire sont requis.</p>
             </header>
-
-            <form id="formContact" action="retourFormulaire.html">
+            <!-- novalidate : permet de ne pas verifier les champs -->
+            <form id="formContact" action="retourFormulaire.html" novalidate>
 
                 <div>
                     <div>
                         <label for="nomFamille">Nom de Famille</label>
-                        <input type="text" name="nomFamille" id="nomFamille" required tabindex="2" placeholder="votre nom" />
+                        <input type="text" name="nomFamille" id="nomFamille" required tabindex="1" placeholder="votre nom" />
 
                     </div>
                     <div>
                         <label for="prenom">Prénom</label>
-                        <input type="text" name="prenom" id="prenom" required autofocus tabindex="1" placeholder="Votre prenom" />
+                        <input type="text" name="prenom" id="prenom" required autofocus tabindex="2" placeholder="Votre prenom" />
                     </div>
                     <div>
                         <label for="email">Adresse e-mail</label>
@@ -72,9 +79,7 @@
                     <div>
 
                         <label for="message">Votre Message</label>
-                        <textarea name="message" id="message" required tabindex="4" title="Mettre votre message a notre attention">
-
-                    </textarea>
+                        <textarea name="message" id="message" required tabindex="4" title="Mettre votre message a notre attention"></textarea>
 
                     </div>
                 </div>
