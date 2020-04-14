@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/CSS/site.css" type="text/css" />
 
     <!-- menu petit ecran -->
-    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery-3.5.0.js"></script>
     <script src="/js/menu.js"></script>
 
     <!-- fonction dynamique  -->
@@ -40,6 +40,7 @@
                 <li> <a href="/webPage/contact.html" title="Vers la page de contact">Contact</a></li>
                 <li> <a href="/webPage/about.html" title="Vers la page de l'à propos">A propos</a></li>
                 <li> <a href="/webPage/blog.html" title="Vers la page de mon Blog">Blog</a></li>
+                <li> <a href="https://github.com/MGNetworking" title="Vers Mon github">My github</a></li>
                 <li> <a href="/webPage/CV.html" title="Vers la page de mon CV">CV</a></li>
             </ul>
         </nav>
@@ -56,17 +57,18 @@
                 <p>Merci de compléter le formulaire suivant pour me contacter. Tout les champs de ce formulaire sont requis.</p>
             </header>
             <!-- novalidate : permet de ne pas verifier les champs -->
+            <!-- a ajoute : method="POST" -->
             <form id="formContact" action="retourFormulaire.html" novalidate>
 
                 <div>
                     <div>
                         <label for="nomFamille">Nom de Famille</label>
-                        <input type="text" name="nomFamille" id="nomFamille" required tabindex="1" placeholder="votre nom" />
+                        <input type="text" name="nomFamille" id="nomFamille" required autofocus tabindex="1" placeholder="votre nom" />
 
                     </div>
                     <div>
                         <label for="prenom">Prénom</label>
-                        <input type="text" name="prenom" id="prenom" required autofocus tabindex="2" placeholder="Votre prenom" />
+                        <input type="text" name="prenom" id="prenom" required tabindex="2" placeholder="Votre prenom" />
                     </div>
                     <div>
                         <label for="email">Adresse e-mail</label>
@@ -84,7 +86,7 @@
                     </div>
                 </div>
                 <div>
-                    <button type="submit">Envoyer</button>
+                    <button type="submit" tabindex="5">Envoyer</button>
                 </div>
 
             </form>

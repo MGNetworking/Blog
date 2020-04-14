@@ -1,17 +1,29 @@
-/*ce script permet la validation du formlaire  apres voir 
-vérifier que les champs ont bien etait compléter */
+/*
+ce script permet la validation du formlaire  apres voir
+vérifier que les champs ont bien etait compléter
+*/
 
 // recup de l'élément form
 let eltForm = document.getElementById('formContact');
 
-// créer un evenement submit
+// recup les éléments du formulaire
+let champsForm = document.querySelectorAll('input[required],textarea[required]');
+
+// gestion evenement par élément
+champsForm.forEach((eltChamps) => {
+
+    // recoit le focus sur le champs du formualire
+    eltChamps.addEventListener('focus', () => resteValidation(eltChamps), false);
+    // perd le focus sur le champs du formulaire
+    eltChamps.addEventListener('blur', () => validation(eltChamps), false);
+})
+
+// gestion des evenements par submit
 eltForm.addEventListener('submit', (event) => {
     // suprime l'envoi par defaut
     event.preventDefault();
-    // recup les éléments
-    let champsForm = document.querySelectorAll('input[required],textarea[required]');
 
-    // supprime les message précédant
+    // supprime les messages précédant
     champsForm.forEach((elementReset) => {
         resteValidation(elementReset);
     })
@@ -23,13 +35,12 @@ eltForm.addEventListener('submit', (event) => {
         // verif validation champs
         if (!validation(formElement)) {
             testeChamps = false;
-            console.log("Valeur : " + testeChamps);
+
         }
     });
 
     // envoi si tout les champs sont ok
     if (testeChamps) {
-        console.log("submit: " + testeChamps);
         event.target.submit();
     }
 
@@ -54,17 +65,18 @@ function validation(formElement) {
     }
 }
 
-// remise a 0 des champs invalidés
+// remise a 0 des champs utilisé pour l'invalidation
 function resteValidation(formElement) {
 
     // suprime la classe invalide
     formElement.classList.remove('invalid');
     let champsLabel = formElement.previousElementSibling;
 
+    // pour chaque 1 élément children
     while (champsLabel.firstElementChild) {
+        // suprime le 1er éléments
         champsLabel.removeChild(champsLabel.firstElementChild);
     }
     // mise a true de propriete voir interface validityState
     formElement.valid = true;
-    console.log(formElement);
 }
